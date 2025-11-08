@@ -151,18 +151,25 @@
       font-size: 1rem;
       margin-bottom: 0.5rem;
     }
+    .email-list-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+    }
     .email-list-link {
-      display: block;
+      display: inline-block;
       color: #1a1a1a;
       text-decoration: none;
       font-size: 0.9rem;
       transition: 0.2s;
-      padding-left: 0;
-      margin-top: 0.5rem;
     }
     .email-list-link:hover {
       color: #666;
-      padding-left: 1rem;
+    }
+    .email-list-separator {
+      color: #666;
+      font-size: 0.9rem;
     }
     .image-gallery {
       margin-top: 4rem;
@@ -361,10 +368,15 @@
       <h2>Information</h2>
       <div class="email-list-item">
         <div class="email-list-title">Get on the Email List</div>
-        <a href="London.html" class="email-list-link">London</a>
-        <a href="Manchester.html" class="email-list-link">Manchester</a>
-        <a href="Birmingham.html" class="email-list-link">Birmingham</a>
-        <a href="Edinburgh.html" class="email-list-link">Edinburgh</a>
+        <div class="email-list-links">
+          <a href="London.html" class="email-list-link">London</a>
+          <span class="email-list-separator">·</span>
+          <a href="Manchester.html" class="email-list-link">Manchester</a>
+          <span class="email-list-separator">·</span>
+          <a href="Birmingham.html" class="email-list-link">Birmingham</a>
+          <span class="email-list-separator">·</span>
+          <a href="Edinburgh.html" class="email-list-link">Edinburgh</a>
+        </div>
       </div>
       <a href="#team">Join the Team</a>
       <a href="#speaker">Become a Speaker</a>
@@ -468,7 +480,7 @@
 
     <footer>
       © 2025 Beer Views | All rights reserved<br>
-      <a href="London.html">London</a>
+      <a href="London.html">London</a> · <a href="Manchester.html">Manchester</a> · <a href="Birmingham.html">Birmingham</a> · <a href="Edinburgh.html">Edinburgh</a>
     </footer>
   </div>
 
