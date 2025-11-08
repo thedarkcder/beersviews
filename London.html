@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>London Mailing List - Beer Views</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      background: #ffffff;
+      color: #1a1a1a;
+      line-height: 1.6;
+      padding: 0;
+    }
+    .nav {
+      border-bottom: 3px solid #1a1a1a;
+      padding: 1.5rem 0;
+      background: #ffffff;
+    }
+    .nav-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-brand {
+      text-decoration: none;
+      color: #1a1a1a;
+    }
+    .nav-brand h1 {
+      font-size: 1.5rem;
+      margin: 0;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+    .nav-links a {
+      color: #1a1a1a;
+      text-decoration: none;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover {
+      color: #666;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      font-family: 'Courier New', monospace;
+    }
+    .subtitle {
+      font-size: 1.1rem;
+      color: #4a4a4a;
+      margin-bottom: 0.5rem;
+      font-style: italic;
+    }
+    .location {
+      font-size: 0.95rem;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-family: 'Courier New', monospace;
+      margin-top: 0.5rem;
+    }
+    .button {
+      display: inline-block;
+      background: #1a1a1a;
+      color: #ffffff;
+      font-weight: 600;
+      padding: 1rem 2.5rem;
+      text-decoration: none;
+      transition: 0.2s;
+      margin: 1rem 0;
+      border: 2px solid #1a1a1a;
+      font-family: 'Courier New', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-size: 0.9rem;
+    }
+    .button:hover {
+      background: #ffffff;
+      color: #1a1a1a;
+    }
+    .form-section {
+      margin-top: 4rem;
+      padding: 2rem 0;
+    }
+    .form-section h2 {
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 2rem;
+      font-family: 'Courier New', monospace;
+      color: #4a4a4a;
+    }
+    .form-container {
+      min-height: 400px;
+    }
+    .form-container iframe {
+      width: 100%;
+      border: none;
+      min-height: 400px;
+    }
+    footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid #e0e0e0;
+      font-size: 0.85rem;
+      color: #666;
+      text-align: left;
+      font-family: 'Courier New', monospace;
+    }
+    footer a {
+      color: #666;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    footer a:hover {
+      color: #1a1a1a;
+    }
+    .social-media {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid #e0e0e0;
+    }
+    .social-media h2 {
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 1.5rem;
+      font-family: 'Courier New', monospace;
+      color: #4a4a4a;
+    }
+    .social-links {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+    .social-links a {
+      display: inline-block;
+      width: 32px;
+      height: 32px;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+    .social-links a:hover {
+      transform: scale(1.1);
+      opacity: 0.8;
+    }
+    .social-links svg {
+      width: 100%;
+      height: 100%;
+      fill: #1a1a1a;
+    }
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+      .nav-content {
+        padding: 0 1.5rem;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+      }
+      .nav-brand h1 {
+        font-size: 1.25rem;
+      }
+      .nav-links {
+        gap: 1.5rem;
+      }
+      .container {
+        padding: 2rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-content">
+      <a href="index.html" class="nav-brand">
+        <h1>Beer Views</h1>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <span style="color: #666; font-family: 'Courier New', monospace;">LONDON</span>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <section class="form-section">
+        <h1>LONDON</h1>
+        <h2>Beer Views is a series of events where professors and experts give thought-provoking lectures inside of bars.</h2>
+      <h2>Sign up to  be notified when tickets drop.</h2>
+      <div class="form-container">
+        <iframe data-w-type="embedded" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://10hij.mjt.lu/wgt/10hij/047r/form?c=d2f5693b" width="100%" style="height: 0;"></iframe>
+      </div>
+    </section>
+
+    <section class="social-media">
+      <h2>Follow Us</h2>
+      <div class="social-links">
+        <a href="https://twitter.com/beerviews" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+          </svg>
+        </a>
+        <a href="https://instagram.com/beerviews" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </a>
+        <a href="https://tiktok.com/@beerviews" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      © 2025 Beer Views | All rights reserved<br>
+      <a href="index.html">London</a>
+    </footer>
+  </div>
+
+  <script type="text/javascript" src="https://app.mailjet.com/pas-nc-embedded-v1.js"></script>
+</body>
+</html>
+
