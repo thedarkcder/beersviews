@@ -33,6 +33,38 @@
       width: 100%;
       border-radius: 10px;
     }
+    .button {
+      display: inline-block;
+      background: #ffd54f;
+      color: #000;
+      font-weight: bold;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.2s;
+      margin: 1rem 0;
+    }
+    .button:hover {
+      background: #ffca28;
+    }
+    .links {
+      margin-top: 3rem;
+    }
+    .links a {
+      display: block;
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+      background: #cfe3ff;
+      margin: 1rem auto;
+      padding: 0.8rem;
+      max-width: 260px;
+      border-radius: 6px;
+      transition: 0.2s;
+    }
+    .links a:hover {
+      background: #b3d2ff;
+    }
     footer {
       margin-top: 3rem;
       font-size: 0.9rem;
@@ -42,8 +74,9 @@
 </head>
 <body>
   <header>
-    <h1>🍺 Beer Views</h1>
+    <h1>Beer Views</h1>
     <p>Sharing honest opinions on great brews</p>
+    <a href="#" class="button">Get Tickets</a>
   </header>
 
   <section>
@@ -60,8 +93,16 @@
     </div>
   </section>
 
+  <section class="links">
+    <a href="#email">Get on the Email List</a>
+    <a href="#team">Join the Team</a>
+    <a href="#speaker">Become a Speaker</a>
+    <a href="#host">Host at Your Bar</a>
+    <a href="#contact">Contact Us</a>
+  </section>
+
   <footer>
-    © 2025 Beer Views | Brewed with 🍺 and good vibes
+    © 2025 Beer Views | Brewed with care and good vibes
   </footer>
 </body>
 </html>
