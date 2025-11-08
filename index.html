@@ -5,104 +5,403 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Beer Views</title>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
     body {
-      font-family: 'Arial', sans-serif;
-      background: #f8f6f1;
-      color: #333;
-      text-align: center;
-      padding: 2rem;
+      font-family: 'Georgia', 'Times New Roman', serif;
+      background: #ffffff;
+      color: #1a1a1a;
+      line-height: 1.6;
+      padding: 0;
+    }
+    .hero {
+      position: relative;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-image: url('https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255, 255, 255, 0.85);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      width: 100%;
+      padding: 3rem 2rem;
+      text-align: left;
+    }
+    .hero header {
+      border-bottom: 3px solid #1a1a1a;
+      padding-bottom: 2rem;
+      margin-bottom: 3rem;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
     }
     header {
-      background: #ffe082;
-      padding: 1rem;
-      border-radius: 12px;
-      margin-bottom: 2rem;
+      border-bottom: 3px solid #1a1a1a;
+      padding-bottom: 2rem;
+      margin-bottom: 3rem;
+      text-align: left;
     }
     h1 {
-      margin: 0;
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      font-family: 'Courier New', monospace;
     }
-    .beer {
-      background: white;
-      margin: 1rem auto;
-      padding: 1rem;
-      max-width: 400px;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    .subtitle {
+      font-size: 1.1rem;
+      color: #4a4a4a;
+      margin-bottom: 0.5rem;
+      font-style: italic;
     }
-    .beer img {
-      width: 100%;
-      border-radius: 10px;
+    .location {
+      font-size: 0.95rem;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-family: 'Courier New', monospace;
+      margin-top: 0.5rem;
+    }
+    .main-content {
+      margin: 3rem 0;
+    }
+    .description {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: #2a2a2a;
+      margin-bottom: 3rem;
+      max-width: 700px;
     }
     .button {
       display: inline-block;
-      background: #ffd54f;
-      color: #000;
-      font-weight: bold;
-      padding: 0.8rem 1.5rem;
-      border-radius: 8px;
+      background: #1a1a1a;
+      color: #ffffff;
+      font-weight: 600;
+      padding: 1rem 2.5rem;
       text-decoration: none;
       transition: 0.2s;
       margin: 1rem 0;
+      border: 2px solid #1a1a1a;
+      font-family: 'Courier New', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-size: 0.9rem;
     }
     .button:hover {
-      background: #ffca28;
+      background: #ffffff;
+      color: #1a1a1a;
     }
     .links {
-      margin-top: 3rem;
+      margin-top: 4rem;
+      border-top: 1px solid #e0e0e0;
+      padding-top: 2rem;
+    }
+    .links h2 {
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 1.5rem;
+      font-family: 'Courier New', monospace;
+      color: #4a4a4a;
     }
     .links a {
       display: block;
       text-decoration: none;
-      color: #000;
-      font-weight: bold;
-      background: #cfe3ff;
-      margin: 1rem auto;
-      padding: 0.8rem;
-      max-width: 260px;
-      border-radius: 6px;
+      color: #1a1a1a;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid #e0e0e0;
       transition: 0.2s;
+      text-align: left;
+      font-size: 1rem;
     }
     .links a:hover {
-      background: #b3d2ff;
+      color: #666;
+      padding-left: 1rem;
+    }
+    .links a:last-child {
+      border-bottom: none;
+    }
+    .image-gallery {
+      margin-top: 4rem;
+      border-top: 1px solid #e0e0e0;
+      padding-top: 2rem;
+    }
+    .image-gallery h2 {
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 2rem;
+      font-family: 'Courier New', monospace;
+      color: #4a4a4a;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+      border: 1px solid #e0e0e0;
+      background: #fafafa;
+      transition: 0.2s;
+    }
+    .gallery-item:hover {
+      border-color: #1a1a1a;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+    .faq {
+      margin-top: 4rem;
+      border-top: 1px solid #e0e0e0;
+      padding-top: 2rem;
+    }
+    .faq h2 {
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 2rem;
+      font-family: 'Courier New', monospace;
+      color: #4a4a4a;
+    }
+    .faq-item {
+      margin-bottom: 0;
+      text-align: left;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+    .faq-question {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #1a1a1a;
+      font-family: 'Courier New', monospace;
+      cursor: pointer;
+      padding: 1.2rem 0;
+      position: relative;
+      user-select: none;
+      transition: color 0.2s;
+    }
+    .faq-question:hover {
+      color: #666;
+    }
+    .faq-question::after {
+      content: '+';
+      position: absolute;
+      right: 0;
+      font-size: 1.2rem;
+      font-weight: 300;
+      transition: transform 0.3s;
+    }
+    .faq-item.active .faq-question::after {
+      content: '−';
+      transform: rotate(0deg);
+    }
+    .faq-answer {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #2a2a2a;
+      margin-left: 1rem;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+      padding: 0 0 0 1rem;
+    }
+    .faq-item.active .faq-answer {
+      max-height: 1000px;
+      padding: 0 0 1.5rem 1rem;
+    }
+    .faq-answer a {
+      color: #1a1a1a;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+    .faq-answer a:hover {
+      color: #666;
     }
     footer {
-      margin-top: 3rem;
-      font-size: 0.9rem;
-      color: #777;
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid #e0e0e0;
+      font-size: 0.85rem;
+      color: #666;
+      text-align: left;
+      font-family: 'Courier New', monospace;
+    }
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+      .hero {
+        min-height: 60vh;
+      }
+      .hero-content {
+        padding: 2rem 1.5rem;
+      }
+      .container {
+        padding: 2rem 1.5rem;
+      }
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Beer Views</h1>
-    <p>Sharing honest opinions on great brews</p>
-    <a href="#" class="button">Get Tickets</a>
-  </header>
-
-  <section>
-    <div class="beer">
-      <img src="https://images.unsplash.com/photo-1541558619105-3386a7423b5a" alt="Beer glass">
-      <h2>Cold Hop IPA</h2>
-      <p>Refreshing and bright with citrus notes. Perfect for summer evenings.</p>
-    </div>
-
-    <div class="beer">
-      <img src="https://images.unsplash.com/photo-1527169402691-a3f4666e6943" alt="Dark beer">
-      <h2>Midnight Stout</h2>
-      <p>Rich, smooth, and chocolatey — a true winter comfort beer.</p>
+  <section class="hero">
+    <div class="hero-content">
+      <header>
+        <h1>Beer Views</h1>
+        <p class="subtitle">40 minute lectures by professors, engineers experts, and storytellers</p>
+        <p class="location">London</p>
+      </header>
+      <section class="main-content">
+        <a href="#" class="button">Get Tickets</a>
+      </section>
     </div>
   </section>
 
-  <section class="links">
-    <a href="#email">Get on the Email List</a>
-    <a href="#team">Join the Team</a>
-    <a href="#speaker">Become a Speaker</a>
-    <a href="#host">Host at Your Bar</a>
-    <a href="#contact">Contact Us</a>
-  </section>
+  <div class="container">
+    <section class="links">
+      <h2>Information</h2>
+      <a href="#email">Get on the Email List</a>
+      <a href="#team">Join the Team</a>
+      <a href="#speaker">Become a Speaker</a>
+      <a href="#host">Host at Your Bar</a>
+      <a href="#contact">Contact Us</a>
+    </section>
 
-  <footer>
-    © 2025 Beer Views | Brewed with care and good vibes
-  </footer>
+    <section class="image-gallery">
+      <h2>Gallery</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Beer Views Event">
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Lecture in Progress">
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Bar Setting">
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Audience">
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Speaker">
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Event Atmosphere">
+        </div>
+      </div>
+    </section>
+
+    <section class="faq">
+      <h2>FAQ</h2>
+      
+      <div class="faq-item">
+        <div class="faq-question">What is Beer Views?</div>
+        <div class="faq-answer">Beer Views is an event series where professors and experts give thought-provoking lectures inside of bars.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">How do I buy tickets?</div>
+        <div class="faq-answer">On our Eventbrite here ➡️ <a href="https://lecturesontap.com/cities" target="_blank">https://lecturesontap.com/cities</a></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">What happens at Beer Views?</div>
+        <div class="faq-answer">Beer Views starts with about 20 minutes of getting checked in and getting snacks and drinks.<br><br>Then, there's a fun and interactive opener so come chatty. After that, the lecture speaker of the night will take the stage for about 40 minutes. We end with Q&A.<br><br>Typically, folks hang around for a bit afterwards to chat about their thoughts on the lecture.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Where do Beer Views events take place?</div>
+        <div class="faq-answer">Beer Views events take place in various bars in London. You can see the neighborhood where an event will be located by looking at the event details.<br><br>⚠️ The exact address is given in the confirmation email you receive after you get tickets.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">What if I don't drink?</div>
+        <div class="faq-answer">Mocktails and/or bites to eat are available at every Beer Views event. Most of our bars also offer coffee, tea, and desserts as well.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">I want to present at Beer Views. What do I do?</div>
+        <div class="faq-answer">Thank you for your interest in presenting a lecture for Beer Views. Please submit your lecture idea here ➡️ <a href="https://airtable.com/appGaVHfPtEEtSbZO/pagaErpEs9MrIGl9q/form" target="_blank">https://airtable.com/appGaVHfPtEEtSbZO/pagaErpEs9MrIGl9q/form</a><br><br>What we're looking for are unique lecture ideas from folks with expertise. If you have an idea that you think would pair well over drinks, we'd love to hear from you!</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Do I need to buy tickets?</div>
+        <div class="faq-answer">Yes. We do not sell tickets at the door.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">What if an event is sold out? Is there an email list?</div>
+        <div class="faq-answer">Yes, we have an email list. We recommend getting on the list if you want to be notified when new events are added to the calendar. Here's the link ➡️ <a href="https://emaillist.lecturesontap.com/" target="_blank">https://emaillist.lecturesontap.com/</a></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Who created Beer Views?</div>
+        <div class="faq-answer">Beer Views was created by a AI professional</div>
+      </div>
+    </section>
+
+    <footer>
+      © 2025 Beer Views | All rights reserved
+    </footer>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const faqQuestions = document.querySelectorAll('.faq-question');
+      
+      faqQuestions.forEach(question => {
+        question.addEventListener('click', function() {
+          const faqItem = this.parentElement;
+          const isActive = faqItem.classList.contains('active');
+          
+          // Close all FAQ items
+          document.querySelectorAll('.faq-item').forEach(item => {
+            item.classList.remove('active');
+          });
+          
+          // Open clicked item if it wasn't active
+          if (!isActive) {
+            faqItem.classList.add('active');
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
