@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Edinburgh - Beer Views</title>
+  <title>Edinburgh Mailing List - Beer Views</title>
   <style>
     * {
       margin: 0;
@@ -68,11 +68,11 @@
       text-transform: uppercase;
       font-family: 'Courier New', monospace;
     }
-    .content-section {
+    .form-section {
       margin-top: 4rem;
       padding: 2rem 0;
     }
-    .content-section h2 {
+    .form-section h2 {
       font-size: 1.1rem;
       text-transform: uppercase;
       letter-spacing: 0.1em;
@@ -80,13 +80,13 @@
       font-family: 'Courier New', monospace;
       color: #4a4a4a;
     }
-    .coming-soon {
-      font-size: 1.5rem;
-      color: #666;
-      font-family: 'Courier New', monospace;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-top: 2rem;
+    .form-container {
+      min-height: 400px;
+    }
+    .form-container iframe {
+      width: 100%;
+      border: none;
+      min-height: 400px;
     }
     footer {
       margin-top: 4rem;
@@ -174,10 +174,13 @@
   </nav>
 
   <div class="container">
-    <section class="content-section">
+    <section class="form-section">
       <h1>EDINBURGH</h1>
       <h2>Edinburgh, we're excited to bring intellectual conversations to Scotland's capital city.</h2>
-      <div class="coming-soon">Coming Soon</div>
+      <h2>Sign up to be notified when tickets drop.</h2>
+      <div class="form-container">
+        <iframe data-w-type="embedded" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://10hij.mjt.lu/wgt/10hij/0480/form?c=550f05c6" width="100%" style="height: 0;"></iframe>
+      </div>
     </section>
 
     <section class="social-media">
@@ -203,9 +206,11 @@
 
     <footer>
       © 2025 Beer Views | All rights reserved<br>
-      <a href="index.html">Edinburgh</a>
+      <a href="London.html">London</a> · <a href="Birmingham.html">Birmingham</a> · <a href="Edinburgh.html">Edinburgh</a> · <a href="Manchester.html">Manchester</a>
     </footer>
   </div>
+
+  <script type="text/javascript" src="https://app.mailjet.com/pas-nc-embedded-v1.js"></script>
 </body>
 </html>
 
